@@ -1,0 +1,22 @@
+title = "Pantry Database"
+[pantry]
+[pantry.can_soup]
+brand = "Campbells"
+weight_kg = 0.5
+date_purchased = 2024-01-14
+amount = 2
+[pantry.dry_beans]
+type = "black beans"
+weight_kg = 1.5
+date_purchased = 2023-02-14
+amount = 1
+[closet]
+[closet.shirt]
+material = "cotton"
+style = "t-shirt"
+count = 1
+[closet.pants]
+material = "denim"
+length = 34
+waist = 32
+count = 2

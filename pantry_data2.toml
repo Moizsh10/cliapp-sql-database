@@ -1,0 +1,12 @@
+title = "Pantry Database Modify"
+[pantry]
+[pantry.pasta_sauce]
+brand = "Prego"
+color = "red"
+weight_kg = 0.25
+date_purchased = 2023-06-29
+amount = 3
+[closet]
+[closet.shoes]
+material = "leather"
+size = 12
