@@ -19,6 +19,7 @@ parser.add_argument("-s", "--silliness", help="increase output verbosity", actio
 parser.add_argument("square", type=int, help="display a square of a given number")
 args = parser.parse_args()
 answer = args.square**2
+
 # We have two arguments now, one is required. But its important to note that the order you enter them into the CLI doesn't matter
 if args.silliness:
     print(f"silliness turned on, the square of {args.square} is {answer}")

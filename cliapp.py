@@ -1,6 +1,5 @@
 import argparse
 import sqlite3
-import tomllib
 
 def importCommand(args):
     """Imports a TOML file to generate an SQLite database and sort data into a table. If table is already created
@@ -26,7 +25,9 @@ key_parser = subparser.add_parser('get-key', help='get key command')
 key_parser.add_argument('keyString', help='Key that will be searched for in database')
 key_parser.set_defaults(func=getKey)
 
+
+if __name__ == "__main__":
 # parse the Command Line for commands and arguments, then pass the arguments read to the appropriate function based on
 # the subcommand called
-args = parser.parse_args()
-args.func(args)
+    args = parser.parse_args()
+    args.func(args)
