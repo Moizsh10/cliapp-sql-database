@@ -1,15 +1,20 @@
 import argparse
 import sqlite3
+import toml
 
 def importCommand(args):
     """Imports a TOML file to generate an SQLite database and sort data into a table. If table is already created
      it will add new rows for any new entries and/or update the data for entries that already exist if new data is provided """
-    print(f"import command run {args.pathString}")
+    print(f"import command run, Path: {args.pathString}")
+    with open(args.pathString) as file:
+        file_data = toml.load(file)
+
+    print(file_data)
 
 
 def getKey(args):
     """Retrieves a row from the SQLite database and displays in terminal window"""
-    print(f"get-key command run {args.keyString}")
+    print(f"get-key command run, Key: {args.keyString}")
 
 
 # Sets up parser and subcommand parser
@@ -18,7 +23,8 @@ subparser = parser.add_subparsers(help='sub-command help', required=True)
 
 # establish the subcommands, what argument they will take, and what function they will run when called
 import_parser = subparser.add_parser('import', help='import command')
-import_parser.add_argument('pathString', help='Path to the file that will be imported')
+import_parser.add_argument('pathString', help='Path to the file that will be imported. If run from same '
+                                              'directory as file, you may simply enter the file name and extension')
 import_parser.set_defaults(func=importCommand)
 
 key_parser = subparser.add_parser('get-key', help='get key command')
